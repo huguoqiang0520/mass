@@ -7,7 +7,7 @@
 ---
 
 | [Github](https://github.com/huguoqiang0520/mass)
-| [公众号](qrcode_for_wechat.jpg)
+| [公众号](https://github.com/huguoqiang0520/mass/blob/main/qrcode_for_wechat.jpg)
 | [知乎](https://zhuanlan.zhihu.com/p/589607315)
 | [简书](https://www.jianshu.com/p/c4fc719ba5ff)
 | [CSDN](https://blog.csdn.net/u011757697/article/details/128201521)
@@ -21,5 +21,3 @@
 
 |   文章编号    | 文章标题                            |     标签     |    发布时间    |
 |:---------:|---------------------------------|:----------:|:----------:|
-
-
