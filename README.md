@@ -6,29 +6,20 @@
 
 ---
 
-| [Github]()
-| [公众号]()
-| [知乎]()
-| [简书]()
-| [CSDN]()
-| [掘金]()
-| [开发者头条]()
-| [开源中国]()
-| [博客园]()
-| [B站]()
+| [Github](https://github.com/huguoqiang0520/mass)
+| [公众号](qrcode_for_wechat.jpg)
+| [知乎](https://zhuanlan.zhihu.com/p/589607315)
+| [简书](https://www.jianshu.com/p/dc58d5778028)
+| [CSDN](https://blog.csdn.net/u011757697/article/details/128201521)
+| [掘金](https://juejin.cn/post/7173906258339037192)
+| [开源中国](https://my.oschina.net/u/5780511/blog/5605093)
+| [博客园](https://www.cnblogs.com/zhendegou/articles/16955019.html)
+| [B站](https://www.bilibili.com/read/cv20287496)
 |
+
 
 # 清单
 
 |   文章编号    | 文章标题                            |     标签     |    发布时间    |
 |:---------:|---------------------------------|:----------:|:----------:|
-| Chapter 1 | [有限连续范围内生成不重复随机数及其应用](chapter1) |   思想、技巧    | 2022-12-01 |
-| Chapter 2 | [PHP8.1 新特性fiber](chapter2)     | 语言、操作系统、思想 |    待发布     |
-| Chapter 3 | [PHP5 生成器与yield](chapter3)      |            |    待发布     |
-| Chapter 4 | [程序执行过程中的执行堆栈](chapter4)        |            |    待发布     |
-| Chapter 5 | [程序员该了解的寄存器](chapter5)          |            |    待发布     |
-| Chapter 6 | [进程与进程的调度](chapter6)            |            |    待发布     |
-| Chapter 7 | [线程与线程的调度](chapter7)            |            |    待发布     |
-| Chapter 8 | [协程与协程的切换](chapter8)            |            |    待发布     |
-| Chapter 9 | [Go goroutine与其调度过程](chapter9)  |            |    待发布     |
 
