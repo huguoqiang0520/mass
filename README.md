@@ -6,7 +6,7 @@
 
 --- 
 
-| [Github](https://github.com/huguoqiang0520/mass)
+| [Github](https://github.com/huguoqiang0520/mass/blob/main/README.md)
 | [知乎](https://www.zhihu.com/people/zhendegou)
 | [简书](https://www.jianshu.com/u/92cc540f3ecc)
 | [CSDN](https://blog.csdn.net/u011757697?type=blog)
