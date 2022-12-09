@@ -208,8 +208,7 @@ CPU以Fiber栈区为执行堆栈执行003行，调用otherFunc函数，函数调
 
 CPU以Fiber栈区为执行堆栈执行012行，执行到013行时：
 
--
-暂存当前CPU上下文至维护集合中代表该Fiber的上下文信息中（图中106～110，当前执行指令行为013，因此EIP为014；当前Fiber在otherFunc中且无参数和局部变量，因此ESP和EBP指向otherFunc栈帧，也就是9899）
+- 暂存当前CPU上下文至维护集合中代表该Fiber的上下文信息中（图中106～110，当前执行指令行为013，因此EIP为014；当前Fiber在otherFunc中且无参数和局部变量，因此ESP和EBP指向otherFunc栈帧，也就是9899）
 - 将该Fiber标记为休眠状态
 - 从维护集合中将主执行堆栈上下文信息（图中101～105）填充至当前CPU上下文中
 
@@ -445,9 +444,7 @@ static zend_object *zend_fiber_object_create(zend_class_entry *ce)
 2. Fiber本身是一种N:1的线程模型，也许可以结合多线程扩展来实现类似Golang的N:M模型（pthread被放弃了，还未尝试，不过也需要结合第5点）；
 3. Fiber将全部的切换过程完全交由用户（开发者）控制，没有像Golang在runtime或者说引擎/VM中做任何掌控/协助调度的功能；
 4. Fiber本身并没有解决IO阻塞问题，如果直接用它不会提升效率，反而会带来额外的性能开销和阅读成本；
-5.
-如果想要有所发挥，感觉需要在Cli运行模式下封装非阻塞IO和fiber调度器（react和amp基本都是这思路，只是基于生成器+yield方案），同时用第2点的方式构建N:
-M模型来避免阻塞调用的影响，但这样基本都构成一套简易Golang的调度runtime（参考[「Chapter 9. Go goroutine与其调度过程」][1]）；
+5. 如果想要有所发挥，感觉需要在Cli运行模式下封装非阻塞IO和fiber调度器（react和amp基本都是这思路，只是基于生成器+yield方案），同时用第2点的方式构建N:M模型来避免阻塞调用的影响，但这样基本都构成一套简易Golang的调度runtime（参考[「Chapter 9. Go goroutine与其调度过程」][1]）；
 6. 而在FPM运行模式下，感觉有点没什么用武之地，更像是一个底层的玩具API（或许官方在8.1加入Fiber只是第一步，未来可能会从各方面动作来配合实现性能和并发的提升，但势必也意味着复杂和变化吧～）。
 
 ---
