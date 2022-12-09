@@ -153,7 +153,7 @@ function otherFunc(): void
 
 ![图3](img3-上下文信息堆初始化.png)
 
-图中（下图同）内存只展示用户空间几个主要区块，并且为了更简单展示Fiber的执行过程，内存、CPU一级ZendVM屏蔽和抽象了一些细节，如需更多了解细节，可参考以下文章：
+图中（下图同）内存只展示用户空间几个主要区块，并且为了更简单展示Fiber的执行过程，内存、CPU以及ZendVM屏蔽和抽象了一些细节，如需更多了解细节，可参考以下文章：
 
 - [「Chapter 4. 程序执行过程中的执行堆栈」][1]
 - [「Chapter 5. 从CPU和内存视角看程序运行」][1]
@@ -406,7 +406,7 @@ static zend_always_inline zend_fiber_transfer zend_fiber_suspend(zend_fiber *fib
 ---
 
 - `zend_fiber_switch_to`函数内部指向`zend_fiber_switch_context`
-  函数（顾名思义切上下文），结合上面定义的Fiber上下文结构，最终切换的就是CPU上的寄存器内容了，就到这儿吧（再深入怕胡说八道露了馅）
+  函数（顾名思义切上下文），结合上面定义的Fiber上下文结构，最终应该就是通过VM切换CPU上的寄存器内容了，就到这儿吧（再深入怕胡说八道露了馅）
 
 ```
 static zend_always_inline zend_fiber_transfer zend_fiber_switch_to(
