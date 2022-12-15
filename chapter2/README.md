@@ -67,7 +67,7 @@ echo "我是第五个输出；找零为：{$change}\n";
 ）呢？
 于是带着疑问阅读了一下官方文档，果然有写两者的区别：
 
-![图1](img1-Fiber与生成器使用区别.jpg)
+![图1](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img1-Fiber与生成器使用区别.jpg)
 
 可以在无需改造中间函数模拟构建调用堆栈的前提下，在任意位置进行Fiber控制，而这在之前的生成器+yield的实现下是无法做到的
 
@@ -113,7 +113,7 @@ Fiber已经恢复，我也结束自己的生命周期了
 
 继续在官方文档中寻找蛛丝马迹，发现其实在同一段话中已经把原因也说清楚了～～
 
-![图2](img2-Fiber与生成器实现上区别.jpg)
+![图2](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img2-Fiber与生成器实现上区别.jpg)
 
 原因就是：
 
@@ -151,7 +151,7 @@ function otherFunc(): void
 
 - 分配一块空间用于维护主执行堆栈和全部Fiber执行堆栈上下文信息的集合（图中的101～200区块）
 
-![图3](img3-上下文信息堆初始化.png)
+![图3](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img3-上下文信息堆初始化.png)
 
 图中（下图同）内存只展示用户空间几个主要区块，并且为了更简单展示Fiber的执行过程，内存、CPU以及ZendVM屏蔽和抽象了一些细节，如需更多了解细节，可参考以下文章：
 
@@ -173,7 +173,7 @@ $fiber = new Fiber(function (): void {
 - 在用户空间分配一块内存（一般从堆中）充当该Fiber的执行堆栈（图中9900～9801区块）
 - 将该Fiber状态以及其执行堆栈上下文信息加入上下文维护集合（图中106～110，可以认为Fiber包的指令起始位置为003行，因此EIP为003；匿函没有参数和局部变量，因此ESP和EBP都指向9900）
 
-![图4](img4-Fiber初始化.png)
+![图4](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img4-Fiber初始化.png)
 
 ---
 
@@ -188,7 +188,7 @@ CPU继续以主线程栈区为执行堆栈执行了005行，执行到006行时�
 - 暂存当前CPU上下文至维护集合中主执行堆栈上下文信息中（图中101～105，当前执行指令行为006，因此EIP为007）
 - 从维护集合中将目标Fiber标记为激活状态，并将其执行堆栈上下文信息（图中106～110）填充至当前CPU上下文中
 
-![图5](img5-Fiber启动.png)
+![图5](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img5-Fiber启动.png)
 
 ---
 
@@ -196,7 +196,7 @@ CPU继续以主线程栈区为执行堆栈执行了005行，执行到006行时�
 
 CPU以Fiber栈区为执行堆栈执行003行，调用otherFunc函数，函数调用的过程参考[「Chapter 4. 程序执行过程中的执行堆栈」][1]
 
-![图6](img6-Fiber调用otherFunc.png)
+![图6](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img6-Fiber调用otherFunc.png)
 
 ---
 
@@ -212,7 +212,7 @@ CPU以Fiber栈区为执行堆栈执行012行，执行到013行时：
 - 将该Fiber标记为休眠状态
 - 从维护集合中将主执行堆栈上下文信息（图中101～105）填充至当前CPU上下文中
 
-![图7](img7-Fiber暂停.png)
+![图7](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img7-Fiber暂停.png)
 
 ---
 
@@ -227,7 +227,7 @@ CPU以主线程栈区为执行堆栈执行007行，执行到008行时（同上�
 - 暂存当前CPU上下文至维护集合中主执行堆栈上下文信息中（图中101～105，当前执行指令行为008，因此EIP为009）
 - 从维护集合中将目标Fiber标记为激活状态，并将其执行堆栈上下文信息（图中106～110）填充至当前CPU上下文中
 
-![图8](img8-Fiber恢复.png)
+![图8](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img8-Fiber恢复.png)
 
 ---
 
@@ -239,7 +239,7 @@ CPU以Fiber栈区为执行堆栈执行014行，otherFuc函数返回（栈帧出�
 - 销毁该Fiber对应的执行堆栈（图中9801～9900）
 - 将主线程（启动/唤醒该Fiber的调用者）上下文信息（图中101～105）填充至当前CPU上下文中，使CPU回到主线程栈运行
 
-![图9](img9-Fiber终结.png)
+![图9](https://raw.githubusercontent.com/huguoqiang0520/mass/main/chapter2/img9-Fiber终结.png)
 
 ---
 
