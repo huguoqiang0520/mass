@@ -8,7 +8,7 @@
 
 这次花费了4个小时写完，大部分时间是在布局、措辞和格式调整上（具体总结就不贴图了，可以贴下数据统计）：
 
-![img1-数据统计.png](img1-数据统计.png)
+![img1-数据统计.png](https://raw.githubusercontent.com/huguoqiang0520/mass/main/tool2/img1-数据统计.png)
 
 # 背景
 
@@ -65,7 +65,7 @@
 
 ## 20年的样子
 
-![img2-20年.png](img2-20年.png)
+![img2-20年.png](https://raw.githubusercontent.com/huguoqiang0520/mass/main/tool2/img2-20年.png)
 
 # 2021-升级
 
@@ -86,9 +86,9 @@
 
 21年我开始不只是简单记录，而是思考规划和拆解自己的工作，一直落地到每天的事项：
 
-![img3-21年拆分](img3-21年拆分.png)
+![img3-21年拆分](https://raw.githubusercontent.com/huguoqiang0520/mass/main/tool2/img3-21年拆分.png)
 
-![img4-21年记录.png](img4-21年记录.png)
+![img4-21年记录.png](https://raw.githubusercontent.com/huguoqiang0520/mass/main/tool2/img4-21年记录.png)
 
 # 2022-升级
 
@@ -116,7 +116,7 @@
 
 基本与22年保持一致，excel细化维护了事项类型和提交状态：
 
-![img5-22年.png](img5-22年.png)
+![img5-22年.png](https://raw.githubusercontent.com/huguoqiang0520/mass/main/tool2/img5-22年.png)
 
 # 写在最后
 
