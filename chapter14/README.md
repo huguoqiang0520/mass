@@ -59,8 +59,8 @@
 
 这种场景下传统常见的方案也许我们不会陌生——进程级别的异步任务方案！
 
-> Laravel/Lumen也是采用这个方案的
-> 我们组内另一位同学也为我们的开发框架支持了这种异步任务的方案，其实是可以直接采用的，只是它并不是本文的主角～
+> - Laravel/Lumen也是采用这个方案的
+> - 我们组内另一位同学也为我们的开发框架支持了这种异步任务的方案，其实是可以直接采用的，只是它并不是本文的主角～
 
 执行流程如下：
 
@@ -119,8 +119,8 @@
 
 通过Laravel源码验证也是通过fastcgi_finish_request来实现此功能的：
 
-> 阅读理解为：kernel->handle后得到response，response->send中执行了header和body的设置输出后，执行了fastcgi_finish_request
-> 当然它对其他运行模式也做了兼容，但是我暂时用不到
+> - 阅读理解为：kernel->handle后得到response，response->send中执行了header和body的设置输出后，执行了fastcgi_finish_request
+> - 当然它对其他运行模式也做了兼容，但是我暂时用不到
 
 ```php
 $app = require_once __DIR__.'/../bootstrap/app.php';
