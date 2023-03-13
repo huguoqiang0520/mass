@@ -210,9 +210,7 @@ $kernel->terminate($request, $response);
 
 等等，这不是跟golang中的defer很像吗？而且都是延迟执行的意思！当然它们本质是有区别的：
 
--
-golang的defer在语言级，作用是将逻辑块执行延迟到当前函数栈帧要销毁前执行，具体参考[「Chapter 15.Golang defer介绍与实现浅析」][1]
-；
+- golang的defer在语言级，作用是将逻辑块执行延迟到当前函数栈帧要销毁前执行，参考[「Chapter 15.Go defer介绍与实现浅析」][1]；
 - 而我想做的是在框架层的（虽然我也觉得如果php有语言级的defer也挺好），用来将逻辑块的执行延迟到请求响应结束后的意思。
 
 # 实现
